@@ -1,3 +1,3 @@
 # DevKit
 
-A description of this package.
+A package to facilitate iOS development.

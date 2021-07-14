@@ -72,7 +72,6 @@ extension UIColor {
     }
 }
 
-@available(iOS 10.0, *)
 extension UIColor {
     public func toImage(size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         return toImage(width: size.width, height: size.height)
