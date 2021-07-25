@@ -44,7 +44,7 @@ public struct StaticRow {
     }
 }
 
-open class StaticListRenderer: NSObject {
+open class StaticListRenderer: NSObject, UITableViewDataSource, UITableViewDelegate {
     public weak var tableView: UITableView? {
         didSet {
             connectWithTableView()
@@ -68,9 +68,13 @@ open class StaticListRenderer: NSObject {
         tableView?.dataSource = self
         tableView?.delegate = self
     }
-}
 
-extension StaticListRenderer: UITableViewDataSource, UITableViewDelegate {
+    private func getRow(for indexPath: IndexPath) -> StaticRow {
+        return sections[indexPath.section].rows[indexPath.row]
+    }
+
+    // MARK: - Table View DataSource & Delegate
+
     open func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -90,9 +94,5 @@ extension StaticListRenderer: UITableViewDataSource, UITableViewDelegate {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         getRow(for: indexPath).handleSelect()
-    }
-
-    private func getRow(for indexPath: IndexPath) -> StaticRow {
-        return sections[indexPath.section].rows[indexPath.row]
     }
 }
