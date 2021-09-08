@@ -33,6 +33,9 @@ final class MainViewController: UIViewController {
                 StaticRow(title: "Gradient Demo", subtitle: nil, accessory: .disclosureIndicator) { [weak self] in
                     self?.show(MainRouter.newGradientDemoVC(), sender: nil)
                 },
+                StaticRow(title: "Highlight Button", subtitle: nil, accessory: .disclosureIndicator) { [weak self] in
+                    self?.show(MainRouter.highlightButtonComponentVC(), sender: nil)
+                }
             ]),
         ])
     }

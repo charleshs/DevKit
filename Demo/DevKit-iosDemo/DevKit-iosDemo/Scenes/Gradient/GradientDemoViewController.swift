@@ -23,11 +23,7 @@ final class GradientDemoViewController: UIViewController {
             make.directionalEdges.equalTo(view.safeAreaLayoutGuide)
         }
 
-        stackView.addArrangedSubviews([
-            verticalGradientView,
-            horizontalGradientView,
-            diagonalGradientView,
-        ])
+        stackView.addArrangedSubviews(verticalGradientView, horizontalGradientView, diagonalGradientView)
     }
 
     private func putLabelCentered(in targetView: UIView, text: String) {

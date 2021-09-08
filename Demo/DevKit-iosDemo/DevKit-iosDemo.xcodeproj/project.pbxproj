@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C18F87B26AD32410009037D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18F87A26AD32410009037D /* MainRouter.swift */; };
+		7C3B1A0626E90A800051C169 /* ComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B1A0526E90A800051C169 /* ComponentViewController.swift */; };
 		7C6186B726AB1DFF0051226C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6186B626AB1DFF0051226C /* SnapKit */; };
 		7C6186BA26ABF18A0051226C /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6186B926ABF18A0051226C /* DevKit */; };
 		7C6186BE26AC113C0051226C /* GradientDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6186BD26AC113C0051226C /* GradientDemoViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		7C18F87A26AD32410009037D /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		7C3B1A0526E90A800051C169 /* ComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewController.swift; sourceTree = "<group>"; };
 		7C6186BD26AC113C0051226C /* GradientDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDemoViewController.swift; sourceTree = "<group>"; };
 		7CE9E45926AB19B700EC0B35 /* DevKit-iosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevKit-iosDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE9E45C26AB19B700EC0B35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,11 +86,20 @@
 		7C18F87926AD30E20009037D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7C3B1A0426E90A720051C169 /* Component */,
 				7C18F87626AD30090009037D /* Gradient */,
 				7C18F87826AD30D00009037D /* LaunchScreen */,
 				7C18F87526AD2FEA0009037D /* Main */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7C3B1A0426E90A720051C169 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				7C3B1A0526E90A800051C169 /* ComponentViewController.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		7C6186B826ABF18A0051226C /* Frameworks */ = {
@@ -206,6 +217,7 @@
 				7CE9E46126AB19B700EC0B35 /* MainViewController.swift in Sources */,
 				7C18F87B26AD32410009037D /* MainRouter.swift in Sources */,
 				7CE9E47226AB1D2400EC0B35 /* AppRouter.swift in Sources */,
+				7C3B1A0626E90A800051C169 /* ComponentViewController.swift in Sources */,
 				7C6186BE26AC113C0051226C /* GradientDemoViewController.swift in Sources */,
 				7CE9E45D26AB19B700EC0B35 /* AppDelegate.swift in Sources */,
 				7CE9E45F26AB19B700EC0B35 /* SceneDelegate.swift in Sources */,
