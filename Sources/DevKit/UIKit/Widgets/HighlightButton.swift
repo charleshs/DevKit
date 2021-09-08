@@ -9,6 +9,8 @@ open class HighlightButton: UIButton {
 
     open var normalColor: UIColor?
 
+    open var animationDuration: TimeInterval = 0.3
+
     public private(set) lazy var animator = UIViewPropertyAnimator()
 
     public convenience init(highlightedColor: UIColor?, normalColor: UIColor?) {
@@ -20,14 +22,11 @@ open class HighlightButton: UIButton {
 
     open func becomeHighlighted() {
         animator.stopAnimation(true)
-        animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeIn, animations: {
-            self.backgroundColor = self.highlightedColor
-        })
-        animator.startAnimation()
+        backgroundColor = highlightedColor
     }
 
     open func resignHighlighted() {
-        animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeOut, animations: {
+        animator = UIViewPropertyAnimator(duration: animationDuration, curve: .easeOut, animations: {
             self.backgroundColor = self.normalColor
         })
         animator.startAnimation()
