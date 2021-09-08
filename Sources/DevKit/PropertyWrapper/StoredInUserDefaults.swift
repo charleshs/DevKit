@@ -1,10 +1,10 @@
 import Foundation
 
 @propertyWrapper
-public struct UserDefaultsWrapper<Type> {
-    public var wrappedValue: Type? {
+public struct StoredInUserDefaults<Value> {
+    public var wrappedValue: Value? {
         get {
-            if let value = userDefaults.object(forKey: key) as? Type {
+            if let value = userDefaults.object(forKey: key) as? Value {
                 return value
             }
             return defaultValue
@@ -14,7 +14,7 @@ public struct UserDefaultsWrapper<Type> {
         }
     }
 
-    public init(key: String, in userDefaults: UserDefaults = .standard, defaultValue: Type? = nil) {
+    public init(key: String, in userDefaults: UserDefaults = .standard, defaultValue: Value? = nil) {
         self.key = key
         self.userDefaults = userDefaults
         self.defaultValue = defaultValue
@@ -22,5 +22,5 @@ public struct UserDefaultsWrapper<Type> {
 
     private let key: String
     private let userDefaults: UserDefaults
-    private let defaultValue: Type?
+    private let defaultValue: Value?
 }
