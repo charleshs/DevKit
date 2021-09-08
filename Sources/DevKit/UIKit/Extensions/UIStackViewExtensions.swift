@@ -14,7 +14,11 @@ extension UIStackView {
         self.alignment = alignment
     }
 
-    public func addArrangedSubviews(_ subviews: [UIView]) {
+    public var arrangedSubviewSet: Set<UIView> {
+        return Set(arrangedSubviews)
+    }
+
+    public func addArrangedSubviews(_ subviews: UIView...) {
         subviews.forEach(addArrangedSubview)
     }
 
@@ -88,10 +92,6 @@ extension UIStackView {
     }
 
     private func checkIfInsertable(insertingView: UIView, existingView: UIView) -> Bool {
-        return insertingView !== existingView && arrangedSubviewsSet.contains(existingView)
-    }
-
-    private var arrangedSubviewsSet: Set<UIView> {
-        return Set(arrangedSubviews)
+        return insertingView !== existingView && arrangedSubviewSet.contains(existingView)
     }
 }

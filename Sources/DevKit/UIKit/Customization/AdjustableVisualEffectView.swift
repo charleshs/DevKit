@@ -1,7 +1,7 @@
 import UIKit
 
 /// Reference: https://gist.github.com/darrarski/29a2a4515508e385c90b3ffe6f975df7
-open class IntensityTunableVisualEffectView: UIVisualEffectView {
+open class AdjustableVisualEffectView: UIVisualEffectView {
 
     /// Creates visual effect view with given effect and its intensity
     /// - Parameters:
