@@ -24,22 +24,22 @@ final class OptionalExtensionsTests: XCTestCase {
 
     func testRejectEmpty() {
         var nums: [Int]? = []
-        XCTAssertNil(nums.rejectEmpty())
+        XCTAssertNil(nums.nilWhenEmpty())
 
         nums = [1, 2, 3]
-        XCTAssertEqual(nums.rejectEmpty(), [1, 2, 3])
+        XCTAssertEqual(nums.nilWhenEmpty(), [1, 2, 3])
 
         var text: String? = ""
-        XCTAssertNil(text.rejectEmpty())
+        XCTAssertNil(text.nilWhenEmpty())
 
         text = "String"
-        XCTAssertEqual(text.rejectEmpty(), "String")
+        XCTAssertEqual(text.nilWhenEmpty(), "String")
     }
 
     func testStringValue() {
         var text: String? = nil
         XCTAssertEqual(text.stringValue(), "")
-        XCTAssertEqual(text.stringValue(or: "n/a"), "n/a")
+        XCTAssertEqual(text.stringValue(fallback: "n/a"), "n/a")
 
         text = "String"
         XCTAssertEqual(text.stringValue(), "String")

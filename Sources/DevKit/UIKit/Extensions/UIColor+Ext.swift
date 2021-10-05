@@ -5,12 +5,13 @@ extension UIColor {
         let r, g, b, a: UInt64
 
         var uiColor: UIColor {
-            func scale(_ int: UInt64) -> CGFloat { CGFloat(int) / 255 }
-            return UIColor(red: scale(r) , green: scale(g), blue: scale(b), alpha: scale(a))
+            return UIColor(red: float(r) , green: float(g), blue: float(b), alpha: float(a))
         }
+
+        private func float(_ val: UInt64) -> CGFloat { CGFloat(val) / 255 }
     }
 
-    public static func hex(_ hex: String) -> UIColor{
+    public static func hex(_ hex: String) -> UIColor {
         let set = CharacterSet.alphanumerics.inverted.union(.whitespacesAndNewlines)
         let hex = hex.trimmingCharacters(in: set)
 

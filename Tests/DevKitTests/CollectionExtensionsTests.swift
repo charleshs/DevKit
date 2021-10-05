@@ -96,9 +96,9 @@ final class CollectionExtensionsTests: XCTestCase {
 
     func testChangeBySpecs() {
         let changeSpec1 = ChangeSpec<Task>(predicate: { $0.category == "Important" },
-                                           block: { $0.name = "!!!" })
+                                           mutation: { $0.name = "!!!" })
         let changeSpec2 = ChangeSpec<Task>(predicate: { $0.done },
-                                           block: { $0.hidden = true })
+                                           mutation: { $0.hidden = true })
 
         tasks.changeElements(bySpecs: changeSpec1, changeSpec2)
 

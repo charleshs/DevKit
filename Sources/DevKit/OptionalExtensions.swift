@@ -9,15 +9,15 @@ extension Optional where Wrapped: Collection {
         return self == nil ? [] : Array(self!)
     }
 
-    public func rejectEmpty() -> [Wrapped.Element]? {
+    public func nilWhenEmpty() -> [Wrapped.Element]? {
         return isEmptyOrNil ? nil : Array(self!)
     }
 
-    public func stringValue(or fallback: String = "") -> String where Wrapped: StringProtocol {
+    public func stringValue(fallback: String = "") -> String where Wrapped: StringProtocol {
         return self == nil ? fallback : String(self!)
     }
 
-    public func rejectEmpty() -> String? where Wrapped: StringProtocol {
+    public func nilWhenEmpty() -> String? where Wrapped: StringProtocol {
         return isEmptyOrNil ? nil : String(self!)
     }
 }
