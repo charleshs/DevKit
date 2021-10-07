@@ -40,7 +40,7 @@ struct Task: Hashable {
     }
 }
 
-final class CollectionExtensionsTests: XCTestCase {
+final class CollectionExtensionTests: XCTestCase {
     private var students: [Student]!
     private var tasks: [Task]!
 
@@ -59,7 +59,7 @@ final class CollectionExtensionsTests: XCTestCase {
         XCTAssertNil(students[safe: students.count])
     }
 
-    func testChangeWherePredicate() {
+    func testChangeByPredicate() {
         let threshold = 18
 
         students.changeElements(where: { $0.age > threshold }) { s in

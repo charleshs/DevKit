@@ -6,18 +6,20 @@ extension Optional where Wrapped: Collection {
     }
 
     public func emptyWhenNil() -> [Wrapped.Element] {
-        return self == nil ? [] : Array(self!)
+        return map { Array($0) } ?? []
     }
 
-    public func nilWhenEmpty() -> [Wrapped.Element]? {
+    public func mapEmptyToNil() -> [Wrapped.Element]? {
         return isEmptyOrNil ? nil : Array(self!)
     }
+}
 
-    public func stringValue(fallback: String = "") -> String where Wrapped: StringProtocol {
-        return self == nil ? fallback : String(self!)
+extension Optional where Wrapped: StringProtocol {
+    public func unwrapped(default: String = "") -> String {
+        return map { String($0) } ?? `default`
     }
 
-    public func nilWhenEmpty() -> String? where Wrapped: StringProtocol {
+    public func mapEmptyToNil() -> String? {
         return isEmptyOrNil ? nil : String(self!)
     }
 }
